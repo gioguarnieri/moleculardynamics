@@ -1,0 +1,31 @@
+;
+;	User spoel (236)
+;	Wed Nov  3 17:12:44 1993
+;	Input file
+;
+cpp                 =  /usr/bin/cpp
+constraints         =  none;usado para fixar distancias
+integrator          =  steep
+;define              = -DPOSRES 
+nsteps              =  5000
+;
+;	Energy minimizing stuff
+;
+emtol               =  1000;unidade: kcal/mol/nm
+emstep              =  0.01
+pbc                 =  xyz 
+periodic_molecules  =  yes
+nstcomm             =  1000 
+;nstxout             =  1 numero de passos de dinamica que serao salvos  
+;nstfout             =  1 numero de passos de forcas que serao salvas
+;nstlog              =  1 quantas vezes as informacoes serao salvas(energia potencial, temp, pressao, etc)
+ns_type             =  grid
+rlist               =  0.6; raio de corte para selecionar os vizinhos que serao salvos na dinamica
+coulombtype         =  pme
+rcoulomb            =  0.6; cutoff para interacao de coulumb
+rvdw                =  0.6; cutoff para interacao de vw
+freezegrps          =  LIG; grupo que sera congelado (nome na topologia)   
+freezedim           =  Y Y Y; direcoes que serao congeladas
+Tcoupl              =  no
+Pcoupl              =  no
+gen_vel             =  no
