@@ -1,0 +1,55 @@
+;
+;	User spoel (236)
+;	Wed Nov  3 17:12:44 1993
+;	Input file
+;
+title               =  Yo
+cpp                 =  /usr/bin/cpp
+integrator          =  md
+dt                  =  0.002	; ps !
+;define              = -DPOSRES
+constraints         =  none
+nsteps              =  5000000       ;total 10 ns.
+comm_mode           =  Linear
+nstcomm             =  1
+nstxout             =  500 ; passo para gravar 500
+nstvout             =  1000
+nstfout             =  1000
+nstlog              =  100
+nstenergy           =  500
+nstlist             =  10
+ns_type             =  grid
+rlist               =  0.6
+coulombtype         =  PME
+rcoulomb            =  0.6
+rvdw                =  0.6
+Tcoupl              =  nose-hoover  
+;tc_grps             =  DNA Non-DNA
+;tau_t               =  0.1 0.1 
+;ref_t               =  100 100
+tc_grps             =  System
+tau_t               =  0.1
+ref_t               =  300
+freezegrps          =  LIG 
+freezedim           =  Y Y Y 
+;Pull code
+;pull                =  constant_force
+;pull_geometry       =  direction
+;pull_group0         =  0  
+;pull_group1         =  DNA
+;pull_vec1           =  0.0 0.0 1.0
+;pull_k1             =  200  
+;pull_pbcatom1       =  969
+; Energy monitoring
+energygrps	    =  System
+; Pressure coupling is on
+;Pcoupl              =  no 
+Pcoupl              =  Berendsen ;Parrinello-Rahman                  
+pcoupltype          =  anisotropic
+tau_p               =  5.0
+compressibility     =  0 4.5e-5 0 0 0 0
+ref_p               =  0 1 0 0 0 0 
+periodic_molecules  =  yes
+refcoord-scaling    =  com
+; Generate velocites is off
+gen_vel             = no 
