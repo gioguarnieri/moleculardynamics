@@ -30,7 +30,7 @@ Tcoupl              =  nose-hoover
 tc_grps             =  System
 tau_t               =  0.1
 ref_t               =  300
-freezegrps          =  ICE
+freezegrps          =  LIG
 freezedim           =  Y Y Y 
 ;Pull code
 ;pull                =  constant_force
